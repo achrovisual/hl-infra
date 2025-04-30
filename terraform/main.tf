@@ -11,3 +11,8 @@ terraform {
     }
   }
 }
+
+provider "infisical" {
+  host  = var.infisical_host
+  token = var.infisical_token
+}

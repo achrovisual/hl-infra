@@ -16,3 +16,10 @@ provider "infisical" {
   host  = var.infisical_host
   token = var.infisical_token
 }
+
+provider "proxmox" {
+  pm_api_url      = data.infisical_secret.proxmox_api_url.secret_value
+  pm_user         = data.infisical_secret.proxmox_user.secret_value
+  pm_password     = data.infisical_secret.proxmox_password.secret_value
+  pm_tls_insecure = true
+}
